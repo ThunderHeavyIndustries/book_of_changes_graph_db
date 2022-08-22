@@ -2,7 +2,7 @@ defmodule BookOfChanges.Trigram do
   @moduledoc """
     Documentation for `trigram`.
   """
-  defstruct yao: "", yao2: "", yao3: ""
+  defstruct name: "", yao1: "", yao2: "", yao3: ""
 
   alias __MODULE__
 
@@ -14,35 +14,49 @@ defmodule BookOfChanges.Trigram do
     "_"
   end
 
+  def yao_to_binary(yao) do
+    case yao do
+      "--" -> 0
+      "_" -> 1
+    end
+  end
+
+  def binary_to_yao(binary) do
+    case binary do
+      0 -> "--"
+      1 -> "_"
+    end
+  end
+
   def qian do
-    %Trigram{yao: yang, yao2: yang, yao3: yang}
+    %Trigram{name: "qian", yao1: yang(), yao2: yang(), yao3: yang()}
   end
 
   def dui do
-    %Trigram{yao: yin, yao2: yang, yao3: yang}
+    %Trigram{name: "dui", yao1: yin(), yao2: yang(), yao3: yang()}
   end
 
   def li do
-    %Trigram{yao: yang, yao2: yin, yao3: yang}
+    %Trigram{name: "li", yao1: yang(), yao2: yin(), yao3: yang()}
   end
 
   def zhen do
-    %Trigram{yao: yin, yao2: yin, yao3: yang}
+    %Trigram{name: "zhen", yao1: yin(), yao2: yin(), yao3: yang()}
   end
 
   def xun do
-    %Trigram{yao: yang, yao2: yang, yao3: yin}
+    %Trigram{name: "xun", yao1: yang(), yao2: yang(), yao3: yin()}
   end
 
   def kan do
-    %Trigram{yao: yin, yao2: yang, yao3: yin}
+    %Trigram{name: "kan", yao1: yin(), yao2: yang(), yao3: yin()}
   end
 
   def gen do
-    %Trigram{yao: yang, yao2: yin, yao3: yin}
+    %Trigram{name: "gen", yao1: yang(), yao2: yin(), yao3: yin()}
   end
 
   def kun do
-    %Trigram{yao: yin, yao2: yin, yao3: yin}
+    %Trigram{name: "kun", yao1: yin(), yao2: yin(), yao3: yin()}
   end
 end
