@@ -12,15 +12,4 @@ defmodule BookOfChanges do
       :world
 
   """
-  def hello do
-    :world
-  end
-
-  def yin do
-    "--"
-  end
-
-  def yang do
-    "_"
-  end
 end
